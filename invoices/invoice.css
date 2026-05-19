@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
-  font-family: Sans-Serif;
+  font-family: "Open Sans", sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 5px;
