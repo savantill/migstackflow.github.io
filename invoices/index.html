@@ -115,14 +115,14 @@
               <tr>
                 <th>Description</th>
                  <th class="number">Quantity</th>
-                 <th>Unit</th>
+
                 <th class="money">Unit Price</th>
                 <th class="money">Line Total</th>
               </tr>
               <tr v-for="item in invoice.Items">
                 <td>{{ item.Description }}</td>
                 <td class="number">{{ item.Quantity }}</td>
-                <td>{{ item.Unit }}</td>
+
                 <td class="money">{{ item.Price | currency }}</td>
                 <td class="money">{{ item.Line Total | currency }}</td>
               </tr>
