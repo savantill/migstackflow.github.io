@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -18,7 +20,7 @@ a {
 }
 
 .meta {
-  color: #ff8000;
+  color: #1D6F42;
 }
 
 .header .title {
@@ -52,7 +54,7 @@ a {
   padding: 1px;
   margin-top: 1em;
   margin-bottom: 1em;
-  background: #ff8000;
+  background: #1D6F42;
   -webkit-print-color-adjust: exact !important;
   color-adjust: exact !important;
 }
@@ -63,6 +65,15 @@ a {
   text-transform: uppercase;
 }
 
+.client.client-title{
+  background-color: #ffffff;
+  color: #000;
+}
+.client-title .title{
+  color: #000000;
+  font-weight: bold;
+}
+
 .client .details, .summary .details {
   padding: 4px;
   background-color: white;
@@ -70,12 +81,12 @@ a {
 
 table.items {
   width: 100%;
-  border: 1px solid #ff8000;
+  border: 1px solid #1D6F42;
   border-collapse: collapse;
 }
 
 table.items th {
-  text-align: left;
+  /* text-align: left; */
   color: white;
   text-transform: uppercase;
   font-weight: normal;
@@ -135,7 +146,7 @@ div.summary .part {
 div.summary .total {
   display: block;
   flex-grow: 1;
-  background: #000080;
+  background: #9E9E9E;
   font-size: 140%;
 }
 
@@ -319,3 +330,10 @@ div.column-name {
   border-radius: 0.25em;
 }
 
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
