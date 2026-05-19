@@ -38,16 +38,8 @@
       <div class="invoice" v-if="invoice">
         <template v-if="invoice">
           <div class="top">
-            <div class="block">
-              <div class="header">
-                <div class="meta title">Invoice</div>
-              </div>
-              <div class="info"><span class="meta">Invoice Number</span> #{{ invoice.Number }}</div>
-              <div class="info" v-if="invoice.Issued"><div class="meta date-tag">Issued</div> {{ invoice.Issued | asDate }}</div>
-              <div class="info" v-if="invoice.Due"><div class="meta date-tag">Due</div> {{ invoice.Due | asDate }}</div>
-            </div>
-            
             <div class="supplier">
+              <img src="https://maxwellinvestmentsgroup.com/wp-content/uploads/2025/09/cropped-Maxwell-Investments-Group-Logo_transparent-scaled-1-300x100.png"/>
               <div v-for="business in (invoice.Invoicer ? [invoice.Invoicer] : [])">
                 <template v-if="typeof(business) === 'string'">
                   <div class="address newlined">{{ business }}</div>
@@ -76,10 +68,19 @@
                 </template>
               </div>
             </div>
+
+            <div class="block">
+              <div class="header">
+                <div class="meta title text-right">Invoice</div>
+              </div>
+              <div class="info text-right"><span class="meta">Invoice Number</span> #{{ invoice.Number }}</div>
+              <div class="info text-right" v-if="invoice.Issued"><div class="meta date-tag">Issue date</div> {{ invoice.Issued | asDate }}</div>
+              <div class="info text-right" v-if="invoice.Due"><div class="meta date-tag">Due date</div> {{ invoice.Due | asDate }}</div>
+            </div>
           </div>
           
-          <div class="client" v-for="business in (invoice.Client ? [invoice.Client] : [])">
-            <div class="title">Client</div>
+          <div class="client client-title" v-for="business in (invoice.Client ? [invoice.Client] : [])">
+            <div class="title">Bill to</div>
             <div class="details">
               <template v-if="typeof(business) === 'string'">
                 <div class="newlined">{{ business }}</div>
@@ -113,17 +114,17 @@
             </template>
             <template v-else>
               <tr>
-                <th>Description</th>
-                <th class="number">Quantity</th>
-                <th>Unit</th>
-                <th class="money">Unit Price</th>
-                <th class="money">Total</th>
+                <th class="text-left">Description</th>
+                <th class="number text-right">Quantity</th>
+                <th class="text-left">Unit</th>
+                <th class="money text-right">Unit Price</th>
+                <th class="money text-right">Total</th>
               </tr>
               <tr v-for="item in invoice.Items">
                 <td>{{ item.Description }}</td>
                 <td class="number">{{ item.Quantity }}</td>
                 <td>{{ item.Unit }}</td>
-                <td class="money">{{ item.Price | currency }}</td>
+                <td class="money ">{{ item.Price | currency }}</td>
                 <td class="money">{{ item.Total | currency }}</td>
               </tr>
             </template>
